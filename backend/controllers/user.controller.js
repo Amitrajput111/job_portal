@@ -1,6 +1,6 @@
 import {user} from "../models/user.model.js";
 imp
- (export.const register - async (req,res) = > {
+ (export.const register - async (req,res) = > 
     export const register = async (req, res) => {
     try {
         const {fullname , email, phoneNumber , password, role} =req.body;
@@ -20,3 +20,4 @@ imp
 }catch (error) {
 
 }
+)
