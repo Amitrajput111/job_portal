@@ -2,6 +2,8 @@ Job Portal Web Application (MERN Stack)
 
 A full-stack Job Portal web application developed using the **MERN stack (MongoDB, Express, React, Node.js)** as part of my **Web Development Internship at CodSoft**.  
 This project focuses on clean architecture, proper Git workflow, and real-world development practices.
+Live Project link : https://hireflow-alpha.vercel.app
+
 
 ---
 
