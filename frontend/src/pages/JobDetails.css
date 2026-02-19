@@ -1,0 +1,132 @@
+.job-details-page {
+  min-height: 80vh;
+  background: #f5f5f5;
+  padding: 2rem;
+}
+
+.job-details-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.company-info h2 {
+  font-size: 1.5rem;
+  color: #667eea;
+  margin-bottom: 0.25rem;
+}
+
+.company-info p {
+  color: #666;
+}
+
+.job-meta {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.job-meta span {
+  padding: 0.5rem 1rem;
+  background: #f0f0f0;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.job-type {
+  background: #e3f2fd !important;
+  color: #1976d2;
+}
+
+.salary {
+  background: #e8f5e9 !important;
+  color: #388e3c;
+}
+
+.job-description,
+.job-requirements {
+  margin: 2rem 0;
+}
+
+.job-description h3,
+.job-requirements h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.job-description p {
+  line-height: 1.8;
+  color: #555;
+}
+
+.job-requirements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-requirements li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #555;
+}
+
+.job-requirements li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.apply-button {
+  width: 100%;
+  padding: 1rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background 0.3s;
+}
+
+.apply-button:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.apply-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.message {
+  padding: 1rem;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 6px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #666;
+}
