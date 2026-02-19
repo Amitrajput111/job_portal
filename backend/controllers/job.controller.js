@@ -7,8 +7,8 @@ export const postJob = async (req, res) => {
 
     if (!title || !description || !requirements || !salary || !location || !jobType || !experience || !position || !companyId) {
       return res.status(400).json({
-        message: "All fields are required",
-        success: false
+        success: false,
+        message: "All fields are required"
       });
     }
 
@@ -26,15 +26,15 @@ export const postJob = async (req, res) => {
     });
 
     return res.status(201).json({
+      success: true,
       message: "New job created successfully",
-      job,
-      success: true
+      data: job
     });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: "Server error",
-      success: false
+      success: false,
+      message: "Server error"
     });
   }
 };
@@ -52,22 +52,16 @@ export const getAllJobs = async (req, res) => {
       path: "company"
     }).sort({ createdAt: -1 });
 
-    if (!jobs) {
-      return res.status(404).json({
-        message: "Jobs not found",
-        success: false
-      });
-    }
-
     return res.status(200).json({
-      jobs,
-      success: true
+      success: true,
+      message: "Jobs fetched successfully",
+      data: jobs
     });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: "Server error",
-      success: false
+      success: false,
+      message: "Server error"
     });
   }
 };
@@ -77,21 +71,26 @@ export const getJobById = async (req, res) => {
     const jobId = req.params.id;
     const job = await Job.findById(jobId).populate({
       path: "applications"
+    }).populate({
+      path: "company"
     });
 
     if (!job) {
       return res.status(404).json({
-        message: "Job not found",
-        success: false
+        success: false,
+        message: "Job not found"
       });
     }
 
-    return res.status(200).json({ job, success: true });
+    return res.status(200).json({ 
+      success: true,
+      data: job 
+    });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: "Server error",
-      success: false
+      success: false,
+      message: "Server error"
     });
   }
 };
@@ -100,26 +99,18 @@ export const getAdminJobs = async (req, res) => {
   try {
     const adminId = req.id;
     const jobs = await Job.find({ created_by: adminId }).populate({
-      path: 'company',
-      createdAt: -1
-    });
-
-    if (!jobs) {
-      return res.status(404).json({
-        message: "Jobs not found",
-        success: false
-      });
-    }
+      path: 'company'
+    }).sort({ createdAt: -1 });
 
     return res.status(200).json({
-      jobs,
-      success: true
+      success: true,
+      data: jobs
     });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: "Server error",
-      success: false
+      success: false,
+      message: "Server error"
     });
   }
 };
@@ -131,20 +122,20 @@ export const deleteJob = async (req, res) => {
 
     if (!job) {
       return res.status(404).json({
-        message: "Job not found",
-        success: false
+        success: false,
+        message: "Job not found"
       });
     }
 
     return res.status(200).json({
-      message: "Job deleted successfully",
-      success: true
+      success: true,
+      message: "Job deleted successfully"
     });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: "Server error",
-      success: false
+      success: false,
+      message: "Server error"
     });
   }
 };

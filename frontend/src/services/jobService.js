@@ -3,7 +3,7 @@ import api from './api';
 export const getJobs = async (keyword = '') => {
   try {
     const response = await api.get(`/job/get?keyword=${keyword}`);
-    return response.data.jobs || [];
+    return response.data.data || [];
   } catch (error) {
     console.error('Error fetching jobs:', error);
     return [];
@@ -13,7 +13,7 @@ export const getJobs = async (keyword = '') => {
 export const getJobById = async (id) => {
   try {
     const response = await api.get(`/job/get/${id}`);
-    return response.data.job;
+    return response.data.data;
   } catch (error) {
     console.error('Error fetching job:', error);
     return null;
