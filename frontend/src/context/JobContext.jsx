@@ -5,17 +5,29 @@ export const JobContext = createContext();
 
 export function JobProvider({ children }) {
   const [jobs, setJobs] = useState([]);
-  const [selectedJob, setSelectedJob] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getJobs().then((data) => {
-      setJobs(data);
-      setSelectedJob(data[0] || null);
-    });
+    fetchJobs();
   }, []);
 
+  const fetchJobs = async () => {
+    try {
+      setLoading(true);
+      const data = await getJobs();
+      setJobs(data);
+      setError(null);
+    } catch (err) {
+      console.error("Error fetching jobs:", err);
+      setError("Failed to load jobs");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <JobContext.Provider value={{ jobs, selectedJob, setSelectedJob }}>
+    <JobContext.Provider value={{ jobs, loading, error, fetchJobs }}>
       {children}
     </JobContext.Provider>
   );
