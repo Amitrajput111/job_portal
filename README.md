@@ -1,98 +1,113 @@
-# Job Portal Application
+# JobPortal - MERN Stack Job Portal Application
 
-A full-stack MERN (MongoDB, Express, React, Node.js) job portal application where job seekers can browse and apply for jobs, and recruiters can post and manage job listings.
+A professional full-stack job portal application built with the MERN stack (MongoDB, Express, React, Node.js). Job seekers can browse and apply for jobs, while recruiters can post and manage job listings.
 
-## Features
+## ✨ Features
 
 ### For Job Seekers
-- User registration and authentication
-- Browse available jobs
-- Search and filter jobs
-- View detailed job descriptions
-- Apply for jobs with one click
-- Track application status
-- Update profile and skills
+- 🔐 User registration and authentication
+- 🔍 Browse and search jobs
+- 🎯 Filter jobs by type and work mode
+- 📄 View detailed job descriptions
+- ✅ One-click job application
+- 👤 Profile management
 
 ### For Recruiters
-- Company registration
-- Post new job listings
-- Manage job postings
-- View applicants
-- Update application status
+- 🏢 Company registration
+- 📝 Post job listings
+- 📊 Manage job postings
+- 👥 View applicants
+- ✏️ Update application status
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-### Frontend
+**Frontend:**
 - React 19
 - React Router DOM
 - Axios
-- CSS3
+- Plain CSS
 
-### Backend
+**Backend:**
 - Node.js
 - Express.js
 - MongoDB with Mongoose
 - JWT Authentication
-- bcryptjs for password hashing
+- bcryptjs
 
-## Installation
+## 📋 Prerequisites
 
-### Prerequisites
 - Node.js (v14 or higher)
 - MongoDB Atlas account or local MongoDB
 - npm or yarn
 
-### Backend Setup
+## 🚀 Installation & Setup
 
-1. Navigate to backend directory:
+### 1. Clone the repository
 ```bash
-cd backend
+git clone https://github.com/Amitrajput111/job_portal.git
+cd job_portal
 ```
 
-2. Install dependencies:
+### 2. Backend Setup
+
 ```bash
+cd backend
 npm install
 ```
 
-3. Create `.env` file:
-```bash
-cp .env.example .env
-```
-
-4. Update `.env` with your credentials:
-```
+Create `.env` file in backend directory:
+```env
 MONGO_URI=your_mongodb_connection_string
 PORT=8000
-SECRET_KEY=your_jwt_secret_key
+SECRET_KEY=your_jwt_secret_key_here
 ```
 
-5. Start the backend server:
+**Important:** Update `MONGO_URI` with your MongoDB connection string:
+- Go to MongoDB Atlas → Network Access
+- Add IP Address: `0.0.0.0/0` (Allow from anywhere)
+- Or add your specific IP address
+
+Start backend server:
 ```bash
 npm run dev
 ```
 
 Backend will run on `http://localhost:8000`
 
-### Frontend Setup
+### 3. Frontend Setup
 
-1. Navigate to frontend directory:
+Open new terminal:
 ```bash
 cd frontend
-```
-
-2. Install dependencies:
-```bash
 npm install
-```
-
-3. Start the development server:
-```bash
 npm run dev
 ```
 
 Frontend will run on `http://localhost:5173`
 
-## API Endpoints
+## 📁 Project Structure
+
+```
+job-portal/
+├── backend/
+│   ├── controllers/      # Request handlers
+│   ├── models/          # Database schemas
+│   ├── routes/          # API routes
+│   ├── middlewares/     # Auth middleware
+│   ├── utils/           # Database connection
+│   └── index.js         # Entry point
+├── frontend/
+│   ├── src/
+│   │   ├── components/  # Reusable components
+│   │   ├── context/     # React Context
+│   │   ├── pages/       # Page components
+│   │   ├── services/    # API services
+│   │   └── App.jsx      # Main app component
+│   └── package.json
+└── README.md
+```
+
+## 🔌 API Endpoints
 
 ### Authentication
 - `POST /api/v1/user/register` - Register new user
@@ -104,58 +119,68 @@ Frontend will run on `http://localhost:5173`
 ### Jobs
 - `GET /api/v1/job/get` - Get all jobs
 - `GET /api/v1/job/get/:id` - Get job by ID
-- `POST /api/v1/job/post` - Post new job (recruiter only)
-- `GET /api/v1/job/getadminjobs` - Get recruiter's jobs
-- `DELETE /api/v1/job/delete/:id` - Delete job
+- `POST /api/v1/job/post` - Post new job (auth required)
+- `GET /api/v1/job/getadminjobs` - Get recruiter's jobs (auth required)
+- `DELETE /api/v1/job/delete/:id` - Delete job (auth required)
 
 ### Companies
-- `POST /api/v1/company/register` - Register company
-- `GET /api/v1/company/get` - Get user's companies
-- `GET /api/v1/company/get/:id` - Get company by ID
-- `PUT /api/v1/company/update/:id` - Update company
+- `POST /api/v1/company/register` - Register company (auth required)
+- `GET /api/v1/company/get` - Get user's companies (auth required)
+- `GET /api/v1/company/get/:id` - Get company by ID (auth required)
+- `PUT /api/v1/company/update/:id` - Update company (auth required)
 
 ### Applications
-- `POST /api/v1/application/apply/:id` - Apply for job
-- `GET /api/v1/application/get` - Get user's applications
-- `GET /api/v1/application/:id/applicants` - Get job applicants
-- `PUT /api/v1/application/status/:id/update` - Update application status
+- `POST /api/v1/application/apply/:id` - Apply for job (auth required)
+- `GET /api/v1/application/get` - Get user's applications (auth required)
+- `GET /api/v1/application/:id/applicants` - Get job applicants (auth required)
+- `PUT /api/v1/application/status/:id/update` - Update status (auth required)
 
-## Project Structure
+## 🎨 Features Implemented
 
+✅ Clean, professional UI similar to Indeed/LinkedIn  
+✅ Responsive design  
+✅ JWT authentication with protected routes  
+✅ Job search and filtering  
+✅ Real-time job listings  
+✅ User profile management  
+✅ Application tracking  
+✅ Error handling  
+✅ Loading states  
+
+## 🐛 Troubleshooting
+
+### MongoDB Connection Issues
+If you see "MongoDB connection error":
+1. Check your `MONGO_URI` in `.env`
+2. Verify MongoDB Atlas IP whitelist settings
+3. Ensure database user credentials are correct
+
+### Port Already in Use
+If port 8000 or 5173 is busy:
+```bash
+# Windows
+netstat -ano | findstr :8000
+taskkill /PID <PID> /F
+
+# Change port in backend/.env
+PORT=3000
 ```
-job-portal/
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middlewares/
-│   ├── utils/
-│   ├── index.js
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   └── package.json
-└── README.md
-```
 
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License
+## 📝 License
 
 This project is open source and available under the MIT License.
 
-## Contact
+## 👨‍💻 Author
 
-For any queries or support, please open an issue in the repository.
+Amit Rajput
+- GitHub: [@Amitrajput111](https://github.com/Amitrajput111)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
