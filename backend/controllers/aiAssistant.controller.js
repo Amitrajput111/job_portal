@@ -86,4 +86,3 @@ export const aiAssistant = async (req, res) => {
     });
   }
 };
-Remove-Item -Force node_modules\.package-lock.json
