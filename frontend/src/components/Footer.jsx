@@ -12,12 +12,14 @@ function Footer() {
         <div className="footer-section">
           <h4>Quick Links</h4>
           <Link to="/jobs">Browse Jobs</Link>
+          <Link to="/contact">Contact Us</Link>
           <Link to="/login">Login</Link>
           <Link to="/register">Sign Up</Link>
         </div>
         <div className="footer-section">
           <h4>Contact</h4>
           <p>support@jobportal.com</p>
+          <p>careers@jobportal.com</p>
         </div>
       </div>
       <div className="footer-bottom">
