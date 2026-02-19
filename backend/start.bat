@@ -1,0 +1,3 @@
+@echo off
+echo Starting Job Portal Backend...
+npm run dev
