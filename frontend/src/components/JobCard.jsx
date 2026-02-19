@@ -1,20 +1,13 @@
-export default function JobCard({ job }) {
-  const score = job?.match?.matchScore;
+import "./JobCard.css";
 
+function JobCard({ job, onClick }) {
   return (
-    <div style={{ border: "1px solid #ddd", padding: 12, marginBottom: 12 }}>
-      <h3>{job.title}</h3>
+    <div className="job-card" onClick={onClick}>
+      <h4>{job.title}</h4>
       <p>{job.company}</p>
-
-      {score !== undefined && (
-        <strong
-          style={{
-            color: score > 70 ? "green" : score >= 40 ? "orange" : "gray"
-          }}
-        >
-          Match: {score}%
-        </strong>
-      )}
+      <span>{job.location}</span>
     </div>
   );
 }
+
+export default JobCard;

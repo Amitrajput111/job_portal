@@ -1,10 +1,10 @@
-import React from "react";
+import "./Navbar.css";
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <div className="navbar">
       <h2>Job Portal</h2>
-    </nav>
+    </div>
   );
 }
 
