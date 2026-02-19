@@ -43,7 +43,7 @@ function Home() {
       </section>
 
       <section className="features-section">
-        <h2>Why Choose JobPortal?</h2>
+        <h2>Why Choose HireFlow?</h2>
         <div className="features-grid">
           <div className="feature-card feature-blue">
             <div className="feature-icon">🎯</div>
@@ -110,7 +110,7 @@ function Home() {
       <section className="cta-section">
         <div className="cta-content">
           <h2>Ready to Start Your Journey?</h2>
-          <p>Join thousands of job seekers who found their dream jobs through JobPortal</p>
+          <p>Join thousands of job seekers who found their dream jobs through HireFlow</p>
           <button className="btn-primary" onClick={() => navigate("/register")}>
             Create Free Account
           </button>

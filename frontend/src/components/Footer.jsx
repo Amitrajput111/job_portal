@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>JobPortal</h3>
+          <h3>HireFlow</h3>
           <p>Find your dream job today</p>
         </div>
         <div className="footer-section">
@@ -18,12 +18,12 @@ function Footer() {
         </div>
         <div className="footer-section">
           <h4>Contact</h4>
-          <p>support@jobportal.com</p>
-          <p>careers@jobportal.com</p>
+          <p>support@hireflow.com</p>
+          <p>careers@hireflow.com</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 JobPortal. All rights reserved. | Developed by Amit Singh Rajput</p>
+        <p>© 2025 HireFlow. All rights reserved. | Developed by Amit Singh Rajput</p>
       </div>
     </footer>
   );

@@ -37,8 +37,8 @@ function Contact() {
           <div className="info-card">
             <div className="info-icon">📧</div>
             <h3>Email Us</h3>
-            <p>support@jobportal.com</p>
-            <p>careers@jobportal.com</p>
+            <p>support@hireflow.com</p>
+            <p>careers@hireflow.com</p>
           </div>
 
           <div className="info-card">

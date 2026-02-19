@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-brand">
-        <h2>JobPortal</h2>
+        <h2>HireFlow</h2>
       </Link>
       <div className="navbar-links">
         <Link to="/jobs">Browse Jobs</Link>
