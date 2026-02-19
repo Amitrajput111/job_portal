@@ -1,49 +1,90 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Inter", "Segoe UI", Arial, sans-serif;
-  background-color: #f4f6f8;
-  color: #1f2937;
-}
-
-/* Layout container */
+/* Container */
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* Headings */
+/* Typography */
 h1 {
-  font-size: 42px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
   margin-bottom: 12px;
 }
 
 h2 {
   font-size: 28px;
+  font-weight: 600;
+  color: #111827;
   margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
 }
 
 p {
   color: #4b5563;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Buttons */
-button {
+/* Primary Button */
+.btn-primary {
   background-color: #2563eb;
   color: white;
   border: none;
-  padding: 10px 16px;
+  padding: 12px 24px;
   border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 15px;
 }
 
-button:hover {
-  background-color: #1e40af;
+.btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #eff6ff;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Error State */
+.error {
+  text-align: center;
+  padding: 60px 20px;
+  color: #dc2626;
+  font-size: 16px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+}
+
+.empty-state h3 {
+  color: #374151;
+  margin-bottom: 8px;
 }

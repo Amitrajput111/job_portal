@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { FiltersContext } from "../../context/FiltersContext";
+import "./FilterPanel.css";
 
 function FilterPanel() {
   const { filters, setFilters } = useContext(FiltersContext);
@@ -12,39 +13,56 @@ function FilterPanel() {
     }));
   };
 
+  const clearFilters = () => {
+    setFilters({
+      remote: false,
+      fullTime: false,
+      internship: false,
+    });
+  };
+
   return (
-    <div className="filters">
-      <h3>Filters</h3>
+    <div className="filter-panel">
+      <div className="filter-header">
+        <h3>Filters</h3>
+        <button className="clear-btn" onClick={clearFilters}>Clear</button>
+      </div>
 
-      <label>
-        <input
-          type="checkbox"
-          name="remote"
-          checked={filters.remote}
-          onChange={handleChange}
-        />
-        Remote
-      </label>
+      <div className="filter-section">
+        <h4>Job Type</h4>
+        <label className="filter-option">
+          <input
+            type="checkbox"
+            name="fullTime"
+            checked={filters.fullTime}
+            onChange={handleChange}
+          />
+          <span>Full-time</span>
+        </label>
 
-      <label>
-        <input
-          type="checkbox"
-          name="fullTime"
-          checked={filters.fullTime}
-          onChange={handleChange}
-        />
-        Full Time
-      </label>
+        <label className="filter-option">
+          <input
+            type="checkbox"
+            name="internship"
+            checked={filters.internship}
+            onChange={handleChange}
+          />
+          <span>Internship</span>
+        </label>
+      </div>
 
-      <label>
-        <input
-          type="checkbox"
-          name="internship"
-          checked={filters.internship}
-          onChange={handleChange}
-        />
-        Internship
-      </label>
+      <div className="filter-section">
+        <h4>Work Mode</h4>
+        <label className="filter-option">
+          <input
+            type="checkbox"
+            name="remote"
+            checked={filters.remote}
+            onChange={handleChange}
+          />
+          <span>Remote</span>
+        </label>
+      </div>
     </div>
   );
 }
