@@ -21,7 +21,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 JobPortal. All rights reserved.</p>
+        <p>© 2025 JobPortal. All rights reserved. | Developed by Amit Singh Rajput</p>
       </div>
     </footer>
   );
