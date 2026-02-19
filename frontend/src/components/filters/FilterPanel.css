@@ -1,8 +1,8 @@
 .filter-panel {
-  background: #ffffff;
+  background: var(--bg-primary);
   padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
   position: sticky;
   top: 80px;
 }
@@ -12,30 +12,32 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .filter-header h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  color: #111827;
+  color: var(--text-primary);
 }
 
 .clear-btn {
   background: none;
   border: none;
-  color: #2563eb;
-  font-size: 14px;
+  color: var(--primary-600);
+  font-size: 13px;
   font-weight: 600;
   padding: 4px 8px;
   cursor: pointer;
 }
 
 .clear-btn:hover {
-  text-decoration: underline;
+  color: var(--primary-700);
 }
 
 .filter-section {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .filter-section:last-child {
@@ -43,9 +45,9 @@
 }
 
 .filter-section h4 {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  color: #374151;
+  color: var(--text-tertiary);
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -61,17 +63,17 @@
 }
 
 .filter-option input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   cursor: pointer;
-  accent-color: #2563eb;
+  accent-color: var(--primary-600);
 }
 
 .filter-option span {
-  font-size: 15px;
-  color: #4b5563;
+  font-size: 14px;
+  color: var(--text-secondary);
 }
 
 .filter-option:hover span {
-  color: #111827;
+  color: var(--text-primary);
 }

@@ -1,69 +1,75 @@
 .auth-container {
-  min-height: 80vh;
+  min-height: calc(100vh - 200px);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: var(--spacing-xl);
+  background: var(--bg-secondary);
 }
 
 .auth-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  background: var(--bg-primary);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lg);
   width: 100%;
-  max-width: 450px;
+  max-width: 440px;
 }
 
 .auth-card h2 {
-  margin-bottom: 1.5rem;
-  color: #333;
+  margin-bottom: 24px;
+  color: var(--text-primary);
   text-align: center;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  color: #555;
+  margin-bottom: 8px;
+  color: var(--text-primary);
   font-weight: 500;
+  font-size: 14px;
 }
 
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
+  padding: 12px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: border-color 0.15s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--primary-500);
 }
 
 .auth-card button {
   width: 100%;
-  padding: 0.875rem;
-  background: #667eea;
+  padding: 12px;
+  background: var(--primary-600);
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: var(--radius-md);
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.15s ease;
 }
 
 .auth-card button:hover:not(:disabled) {
-  background: #5568d3;
+  background: var(--primary-700);
 }
 
 .auth-card button:disabled {
@@ -73,22 +79,24 @@
 
 .error-message {
   background: #fee;
-  color: #c33;
-  padding: 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  color: var(--error);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
   text-align: center;
+  font-size: 14px;
+  border: 1px solid #fecaca;
 }
 
 .auth-link {
   text-align: center;
-  margin-top: 1.5rem;
-  color: #666;
+  margin-top: 24px;
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 
 .auth-link a {
-  color: #667eea;
-  text-decoration: none;
+  color: var(--primary-600);
   font-weight: 600;
 }
 

@@ -1,88 +1,96 @@
 .profile-page {
-  min-height: 80vh;
-  background: #f5f5f5;
-  padding: 2rem;
+  min-height: calc(100vh - 200px);
+  background: var(--bg-secondary);
+  padding: var(--spacing-xl);
 }
 
 .profile-container {
   max-width: 700px;
   margin: 0 auto;
-  background: white;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: var(--bg-primary);
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
 }
 
 .profile-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .profile-header h2 {
-  color: #333;
-  font-size: 1.8rem;
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .logout-button {
-  padding: 0.5rem 1.5rem;
-  background: #dc3545;
+  padding: 8px 16px;
+  background: var(--error);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s;
+  font-size: 14px;
+  transition: background 0.15s ease;
 }
 
 .logout-button:hover {
-  background: #c82333;
+  background: #dc2626;
 }
 
 .profile-container .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .profile-container .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  color: #555;
+  margin-bottom: 8px;
+  color: var(--text-primary);
   font-weight: 500;
+  font-size: 14px;
 }
 
 .profile-container .form-group input,
 .profile-container .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 1rem;
+  padding: 12px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  font-size: 14px;
   font-family: inherit;
-  transition: border-color 0.3s;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: border-color 0.15s ease;
 }
 
 .profile-container .form-group input:focus,
 .profile-container .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--primary-500);
 }
 
 .profile-container button[type="submit"] {
   width: 100%;
-  padding: 0.875rem;
-  background: #667eea;
+  padding: 12px;
+  background: var(--primary-600);
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: var(--radius-md);
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.15s ease;
 }
 
 .profile-container button[type="submit"]:hover:not(:disabled) {
-  background: #5568d3;
+  background: var(--primary-700);
 }
 
 .profile-container button[type="submit"]:disabled {
@@ -91,10 +99,12 @@
 }
 
 .profile-container .message {
-  padding: 1rem;
-  background: #e8f5e9;
-  color: #2e7d32;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
+  padding: 12px;
+  background: #f0fdf4;
+  color: var(--success);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
   text-align: center;
+  font-size: 14px;
+  border: 1px solid #bbf7d0;
 }

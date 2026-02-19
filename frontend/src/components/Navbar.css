@@ -1,10 +1,11 @@
 .navbar {
-  background: #ffffff;
-  padding: 16px 32px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0 var(--spacing-xl);
+  height: 64px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -14,44 +15,62 @@
   text-decoration: none;
 }
 
-.navbar h2 {
-  color: #2563eb;
-  font-size: 24px;
+.navbar-brand h2 {
+  color: var(--primary-600);
+  font-size: 20px;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .navbar-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: var(--spacing-lg);
 }
 
 .navbar-links a {
-  text-decoration: none;
-  color: #4b5563;
+  color: var(--text-secondary);
+  font-size: 14px;
   font-weight: 500;
-  font-size: 15px;
-  transition: color 0.2s;
+  transition: color 0.15s ease;
 }
 
 .navbar-links a:hover {
-  color: #2563eb;
+  color: var(--text-primary);
 }
 
 .navbar-links .btn-register {
-  background: #2563eb;
+  background: var(--primary-600);
   color: white;
-  padding: 8px 20px;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
 }
 
 .navbar-links .btn-register:hover {
-  background: #1d4ed8;
+  background: var(--primary-700);
   color: white;
 }
 
 .user-name {
-  color: #111827;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 14px;
+  padding: 8px 16px;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .navbar-links {
+    gap: var(--spacing-md);
+  }
+  
+  .navbar-links a {
+    font-size: 13px;
+  }
 }
