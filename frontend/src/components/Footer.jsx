@@ -23,7 +23,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 HireFlow. All rights reserved. | Developed by Amit Singh Rajput</p>
+        <p>© 2026 HireFlow. All rights reserved. | Developed by Amit Singh Rajput</p>
       </div>
     </footer>
   );
