@@ -1,117 +1,72 @@
-Job Portal Web Application (MERN Stack)
+# 💼 HireFlow — Recruitment Pipeline & Job Portal Platform
 
-A full-stack Job Portal web application developed using the **MERN stack (MongoDB, Express, React, Node.js)** as part of my **Web Development Internship at CodSoft**.  
-This project focuses on clean architecture, proper Git workflow, and real-world development practices.
-Live Project link : https://hireflow-alpha.vercel.app
+> A full-stack recruitment SaaS platform featuring role-based access control (RBAC), stateless JWT authentication, and an interactive candidate pipeline tracker.
 
-
----
-
-## 📌 Project Overview
-
-The Job Portal application allows employers to post job openings and candidates to search and apply for jobs.  
-The project is being built incrementally with emphasis on maintainability, scalability, and professional coding standards.
+[![Live Demo](https://img.shields.io/badge/Demo-Live_on_Vercel-22c55e.svg)](https://hireflow-alpha.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Amitrajput111%2Fjob__portal-blue.svg)](https://github.com/Amitrajput111/job_portal)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 🚀 Tech Stack
-
-**Frontend**
-- React.js
-- HTML5
-- CSS3
-- JavaScript
-
-**Backend**
-- Node.js
-- Express.js
-
-**Database**
-- MongoDB (planned)
-
-**Version Control**
-- Git & GitHub
+## 🌟 Key Features
+- **Dual-Portal Workflow:** Dedicated, permission-isolated dashboards for Recruiters and Job Applicants.
+- **Stateless Authentication & Security:** Signed JWTs and bcrypt cryptographic password hashing.
+- **Pipeline Progression:** Interactive multi-stage candidate tracking (Applied &rarr; Screening &rarr; Interview &rarr; Offer).
+- **RESTful API Contracts:** 15+ verified endpoints with payload validation and error middleware.
 
 ---
 
-## ✨ Features (Planned & In Progress)
+## 🏗️ System Architecture
 
-### User Features
-- User authentication (Employer / Candidate)
-- Secure login and registration
-- Profile management
-
-### Job Features
-- Job listing and job details
-- Search and filter jobs
-- Apply for jobs
-
-### Employer Features
-- Post new jobs
-- Manage job postings
-- View applications
-
----
-
-## 📂 Project Structure
-
-job_portal/
-├── backend/
-│ ├── index.js
-│ ├── package.json
-│ └── package-lock.json
-│
-├── frontend/
-│ └── (React application setup)
-│
-├── .gitignore
-└── README.md
-
+```
+[ Frontend Client (React) ]
+            │
+      JWT Bearer Token
+            ▼
+[ Node.js / Express Gateway ]
+   ├── RBAC Middleware (Recruiter vs Applicant Guard)
+   ├── Job Posting & Application Handlers
+   └── User Authentication Controller
+            │
+       Mongoose ODM
+            ▼
+[ MongoDB Database ]
+```
 
 ---
 
-## 🛠️ Setup Instructions
+## 🛠️ Tech Stack
+- **Frontend:** React.js, Tailwind CSS, State Management
+- **Backend:** Node.js, Express.js, JWT, Bcrypt, Postman
+- **Database:** MongoDB, Mongoose ODM
+- **Deployment:** Vercel
 
-### Backend Setup
+---
+
+## ⚡ Quick Start (Local Setup)
+
 ```bash
-cd backend
+# 1. Clone repository
+git clone https://github.com/Amitrajput111/job_portal.git
+cd job_portal
+
+# 2. Install dependencies
 npm install
-node index.js
-Server will run on:
 
-http://localhost:5000
-Frontend Setup (Coming Soon)
-cd frontend
-npm install
-npm start
-📌 Development Focus
-Clean repository structure
+# 3. Configure environment variables
+# Create a .env file and add:
+# MONGODB_URI=your_mongodb_connection_string
+# JWT_SECRET=your_jwt_secret_key
+# PORT=5000
 
-Meaningful Git commits
+# 4. Run application
+npm run dev
+```
 
-Separation of frontend and backend
+---
 
-Incremental feature development
-
-Readable and maintainable code
-
-🎯 Internship Context
-This project is being developed as part of my Web Development Internship at CodSoft, with the goal of gaining hands-on experience in building real-world full-stack applications using the MERN stack.
-
-🔗 GitHub Repository
-https://github.com/Amitrajput111/job_portal
-
-👤 Author
-Amit Rajput
-Web Development Intern @ CodSoft
-
-📌 Future Enhancements
-MongoDB integration
-
-Role-based authentication
-
-Email notifications
-
-Deployment to cloud platform
-
-This project is under active development. Features and improvements are being added continuously.
+## 👨‍💻 Author
+**Amit Rajput**  
+- Portfolio: [amit-portfolio-jet.vercel.app](https://amit-portfolio-jet.vercel.app/)
+- LinkedIn: [linkedin.com/in/amitrajput111](https://linkedin.com/in/amitrajput111)
+- GitHub: [github.com/Amitrajput111](https://github.com/Amitrajput111)
