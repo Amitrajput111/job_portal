@@ -1,22 +1,35 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { JobContext } from "../context/JobContext";
+import JobListItem from "../components/jobs/JobListItem";
 import "./Home.css";
+import heroImage from "../assets/realistic_hero.jpg";
 
 function Home() {
   const navigate = useNavigate();
+  const { jobs } = useContext(JobContext);
+  
+  // Get latest 3 jobs for the card section
+  const latestJobs = jobs?.slice(0, 3) || [];
 
   return (
     <div className="home-page">
       <section className="hero-section">
-        <div className="hero-content">
-          <h1>Find Your Dream Job Today</h1>
-          <p>Connect with top companies and discover opportunities that match your skills and aspirations.</p>
-          <div className="hero-buttons">
-            <button className="btn-primary" onClick={() => navigate("/jobs")}>
-              Browse Jobs
-            </button>
-            <button className="btn-secondary" onClick={() => navigate("/register")}>
-              Get Started
-            </button>
+        <div className="hero-container">
+          <div className="hero-content">
+            <h1>Find Your Dream Job Today</h1>
+            <p>Connect with top companies and discover opportunities that match your skills and aspirations. Elevate your career with HireFlow.</p>
+            <div className="hero-buttons">
+              <button className="btn-primary" onClick={() => navigate("/jobs")}>
+                Browse Jobs
+              </button>
+              <button className="btn-secondary" onClick={() => navigate("/register")}>
+                Get Started
+              </button>
+            </div>
+          </div>
+          <div className="hero-image-wrapper">
+            <img src={heroImage} alt="Professional Job Portal" className="hero-image" />
           </div>
         </div>
       </section>
@@ -24,20 +37,70 @@ function Home() {
       <section className="stats-section">
         <div className="stats-container">
           <div className="stat-item">
-            <h3>500+</h3>
+            <h3>5,000+</h3>
             <p>Active Jobs</p>
           </div>
           <div className="stat-item">
-            <h3>200+</h3>
+            <h3>800+</h3>
             <p>Companies</p>
           </div>
           <div className="stat-item">
-            <h3>10K+</h3>
+            <h3>50K+</h3>
             <p>Job Seekers</p>
           </div>
           <div className="stat-item">
-            <h3>95%</h3>
+            <h3>98%</h3>
             <p>Success Rate</p>
+          </div>
+        </div>
+      </section>
+
+      {latestJobs.length > 0 && (
+        <section className="latest-jobs-section">
+          <div className="latest-jobs-header">
+            <h2>Latest Opportunities</h2>
+            <p>Explore the most recently added jobs on HireFlow</p>
+          </div>
+          <div className="latest-jobs-grid">
+            {latestJobs.map(job => (
+              <JobListItem 
+                key={job._id || job.id} 
+                job={job} 
+                onClick={() => navigate(`/jobs`)} 
+              />
+            ))}
+          </div>
+          <div className="view-all-jobs">
+             <button className="btn-secondary-outline" onClick={() => navigate("/jobs")}>View All Jobs</button>
+          </div>
+        </section>
+      )}
+
+      <section className="categories-section">
+        <div className="categories-header">
+          <h2>Popular Job Categories</h2>
+          <p>Explore opportunities in top-demand industries</p>
+        </div>
+        <div className="categories-grid">
+          <div className="category-card" onClick={() => navigate("/jobs?category=technology")}>
+            <div className="category-icon">💻</div>
+            <h3>Technology</h3>
+            <p>1,200+ Open Positions</p>
+          </div>
+          <div className="category-card" onClick={() => navigate("/jobs?category=design")}>
+            <div className="category-icon">🎨</div>
+            <h3>Design & Creative</h3>
+            <p>850+ Open Positions</p>
+          </div>
+          <div className="category-card" onClick={() => navigate("/jobs?category=marketing")}>
+            <div className="category-icon">📈</div>
+            <h3>Marketing</h3>
+            <p>640+ Open Positions</p>
+          </div>
+          <div className="category-card" onClick={() => navigate("/jobs?category=finance")}>
+            <div className="category-icon">💼</div>
+            <h3>Finance</h3>
+            <p>420+ Open Positions</p>
           </div>
         </div>
       </section>
@@ -64,6 +127,36 @@ function Home() {
             <div className="feature-icon">📊</div>
             <h3>Track Applications</h3>
             <p>Keep track of all your job applications in one place. Get real-time updates on your application status.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="companies-section">
+        <h2>Top Companies Hiring Now</h2>
+        <div className="companies-grid">
+          <div className="company-logo-card">
+            <h3>Google</h3>
+            <p>Software & Tech</p>
+          </div>
+          <div className="company-logo-card">
+            <h3>Microsoft</h3>
+            <p>Enterprise Solutions</p>
+          </div>
+          <div className="company-logo-card">
+            <h3>Amazon</h3>
+            <p>E-commerce & Cloud</p>
+          </div>
+          <div className="company-logo-card">
+            <h3>Netflix</h3>
+            <p>Entertainment</p>
+          </div>
+          <div className="company-logo-card">
+            <h3>Meta</h3>
+            <p>Social Media</p>
+          </div>
+          <div className="company-logo-card">
+            <h3>Apple</h3>
+            <p>Hardware & Tech</p>
           </div>
         </div>
       </section>
@@ -121,4 +214,3 @@ function Home() {
 }
 
 export default Home;
-
